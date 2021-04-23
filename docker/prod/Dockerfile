@@ -69,6 +69,8 @@ RUN apt-get update \
     && add-apt-repository ppa:ondrej/php \
     && apt-get update \
     && apt-get install --no-install-recommends -y \
+        php-pear \
+        php7.4-dev \
         php7.4-fpm \
         php7.4-cli \
         php7.4-gd \
@@ -86,10 +88,13 @@ RUN apt-get update \
         libfontconfig1 \
         libxrender1 \
     && php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer \
+    && pecl install -o -f redis && \
+    && echo "extension=redis.so" > /etc/php/7.4/fpm/conf.d/redis.ini && \
+    && echo "extension=redis.so" > /etc/php/7.4/cli/conf.d/redis.ini && \
     && mkdir /run/php \
 ### Cleanup the docker image
     && apt-get clean \
-    && apt-get purge -y --auto-remove wget apt-transport-https software-properties-common build-essential gcc zip debhelper dh-systemd dpkg-dev quilt lsb-release libssl-dev libpcre3-dev zlib1g-dev git \
+    && apt-get purge -y --auto-remove php-pear php7.4-dev wget apt-transport-https software-properties-common build-essential gcc zip debhelper dh-systemd dpkg-dev quilt lsb-release libssl-dev libpcre3-dev zlib1g-dev git \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*  /usr/share/doc/* /usr/share/man/*
 
 ### Copy the nginx/php config to their respective folders
