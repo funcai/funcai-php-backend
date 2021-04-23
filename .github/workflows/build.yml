@@ -28,7 +28,7 @@ jobs:
         with:
           push: true
           context: .
-          file: docker/prod/Dockerfile
+          file: ./docker/prod/Dockerfile
           tags: funcai/funcai-php-backend:latest
       -
         name: Image digest
