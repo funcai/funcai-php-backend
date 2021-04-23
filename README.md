@@ -20,7 +20,7 @@ Run the following command in the root of this project:
 
     docker run -p 80:80 -it -n funcai funcai-php-backend:latest
 
-#### 3. Provide the necessary data
+#### 3. Download the necessary data
 To install funcai-php we need the tensorflow library and the machine learning models. You can either download that data in the docker container:
 
     docker exec -it funcai bash
