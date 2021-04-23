@@ -88,9 +88,9 @@ RUN apt-get update \
         libfontconfig1 \
         libxrender1 \
     && php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer \
-    && pecl install -o -f redis && \
-    && echo "extension=redis.so" > /etc/php/7.4/fpm/conf.d/redis.ini && \
-    && echo "extension=redis.so" > /etc/php/7.4/cli/conf.d/redis.ini && \
+    && pecl install -o -f redis \
+    && echo "extension=redis.so" > /etc/php/7.4/fpm/conf.d/redis.ini \
+    && echo "extension=redis.so" > /etc/php/7.4/cli/conf.d/redis.ini \
     && mkdir /run/php \
 ### Cleanup the docker image
     && apt-get clean \
