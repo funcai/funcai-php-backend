@@ -27,7 +27,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          context: .
           file: ./docker/prod/Dockerfile
           tags: funcai/funcai-php-backend:latest
       -
