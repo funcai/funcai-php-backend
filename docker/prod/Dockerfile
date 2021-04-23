@@ -114,6 +114,8 @@ COPY . /var/www/html
 
 RUN composer install
 
+RUN php artisan route:cache
+
 EXPOSE 80
 
 ENTRYPOINT ["start-container"]
