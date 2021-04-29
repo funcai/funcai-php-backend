@@ -58,8 +58,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         RateLimiter::for('inference', function (Request $request) {
             return [
-                Limit::perMinute(100),
-                Limit::perMinute(app()->environment('production') ? 5 : 100)->by($request->ip()),
+                Limit::perMinute(100)->by($request->ip()),
             ];
         });
     }
