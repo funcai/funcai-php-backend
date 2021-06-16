@@ -28,11 +28,11 @@ class ImageClassificationController extends Controller
             ]);
         }
         Bus::chain([
-            ProcessInference::dispatch($inputImage, Imagenet21k::class, $cacheKey),
+            new ProcessInference($inputImage, Imagenet21k::class, $cacheKey),
             function() use ($inputImage) {
                 unlink($inputImage);
             }
-        ]);
+        ])->dispatch();
 
         return response()->json([
             'status' => 'processing',

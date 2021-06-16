@@ -29,7 +29,7 @@ class ImageStylizationController extends Controller
             ]);
         }
         Bus::chain([
-            ProcessInference::dispatch([
+            new ProcessInference([
                 $inputImage,
                 $inputStyle,
             ], Stylization::class, $cacheKey),
@@ -37,7 +37,7 @@ class ImageStylizationController extends Controller
                 unlink($inputImage);
                 unlink($inputStyle);
             }
-        ]);
+        ])->dispatch();
 
         return response()->json([
             'status' => 'processing',
