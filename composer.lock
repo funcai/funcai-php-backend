@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a7db4b5149a5dda0b4a213b3df1d4ea",
+    "content-hash": "3cd47ada49052a57db89685fa9f05fee",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -559,16 +559,16 @@
         },
         {
             "name": "funcai/funcai-php",
-            "version": "v0.4.1",
+            "version": "v0.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/funcai/funcai-php.git",
-                "reference": "7f4ba08ea2b6ebcfdb262e17c6c9518a9473efcd"
+                "reference": "6fb8d22c6d9233e625d2399a39f882f55412dfaa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/funcai/funcai-php/zipball/7f4ba08ea2b6ebcfdb262e17c6c9518a9473efcd",
-                "reference": "7f4ba08ea2b6ebcfdb262e17c6c9518a9473efcd",
+                "url": "https://api.github.com/repos/funcai/funcai-php/zipball/6fb8d22c6d9233e625d2399a39f882f55412dfaa",
+                "reference": "6fb8d22c6d9233e625d2399a39f882f55412dfaa",
                 "shasum": ""
             },
             "require": {
@@ -599,9 +599,9 @@
             ],
             "support": {
                 "issues": "https://github.com/funcai/funcai-php/issues",
-                "source": "https://github.com/funcai/funcai-php/tree/v0.4.1"
+                "source": "https://github.com/funcai/funcai-php/tree/v0.4.2"
             },
-            "time": "2021-06-16T22:15:27+00:00"
+            "time": "2021-06-16T22:23:12+00:00"
         },
         {
             "name": "graham-campbell/result-type",
