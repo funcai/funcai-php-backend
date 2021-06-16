@@ -18,7 +18,7 @@ class ImageSimilarityController extends Controller
         $inputImage1 = Helpers::base64_to_file($request->get('image1'));
         $inputImage2 = Helpers::base64_to_file($request->get('image2'));
 
-        $cacheKey = 'image-stylization-' . md5_file($inputImage1) . '-' . md5_file($inputImage2);
+        $cacheKey = 'image-similarity-' . md5_file($inputImage1) . '-' . md5_file($inputImage2);
         $cachedResult = Cache::get($cacheKey);
         if ($cachedResult) {
             return response()->json([
